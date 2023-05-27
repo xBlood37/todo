@@ -1,0 +1,10 @@
+.newTaskForm {
+  display: flex;
+  gap: 12px;
+}
+.newTaskForm__button {
+  cursor: pointer;
+}
+.newTaskForm__input {
+  padding: 8px;
+}

@@ -1,0 +1,44 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  list-style-type: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  padding: 10px;
+}
+.task:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.task__right {
+  display: flex;
+  gap: 12px;
+}
+.task__edit,
+.task__delete {
+  cursor: pointer;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  padding: 12px;
+  background-color: inherit;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.task__edit {
+  background-image: url(../../img/edit.svg);
+}
+.task__delete {
+  background-image: url(../../img/delete.svg);
+}
+.task__edit:hover,
+.task__delete:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.task__created {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
