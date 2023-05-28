@@ -4,25 +4,24 @@ import Task from "../Task";
 
 import styles from "./style.module.css";
 
-const TaskList = ({ todos, onDelete }) => {
-  const PreText = () => {
-    return (
-      <li className={styles.preLi}>
-        <span className={styles.preSpan}>AAAAAAAAAAAAAAAAA</span>
-      </li>
-    );
-  };
-
+const TaskList = ({ todos, onDelete, onToggleDone }) => {
   return (
     <ul className={styles.taskList}>
       {todos.length ? (
         todos.map((item, i) => {
           return (
-            <Task {...item} key={item.id} onDelete={() => onDelete(item.id)} />
+            <Task
+              {...item}
+              key={item.id}
+              onDelete={() => onDelete(item.id)}
+              onToggleDone={() => onToggleDone(item.id)}
+            />
           );
         })
       ) : (
-        <PreText />
+        <li className={styles.preLi}>
+          <span className={styles.preSpan}>...</span>
+        </li>
       )}
     </ul>
   );

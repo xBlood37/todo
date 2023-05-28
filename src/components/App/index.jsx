@@ -10,26 +10,27 @@ import styles from "./style.module.css";
 
 class App extends React.Component {
   state = {
-    todoData: [
-      {
-        label: "One more",
+    todoData: [],
+  };
+
+  onAddTaskHandler = (e) => {
+    if (!e.target.value || e.target.value === " ") return;
+    if (e.which === 13 || e.key === "Enter" || e.code === "Enter") {
+      const newItem = {
+        label: e.target.value,
         done: false,
         id: nanoid(),
         created: formatDistanceToNow(new Date(), { addSuffix: true }),
-      },
-      {
-        label: "One second",
-        done: false,
-        id: nanoid(),
-        created: formatDistanceToNow(new Date(), { addSuffix: true }),
-      },
-      {
-        label: "Great! Fck idiot!",
-        done: false,
-        id: nanoid(),
-        created: formatDistanceToNow(new Date(), { addSuffix: true }),
-      },
-    ],
+        edit: false,
+      };
+      this.setState(({ todoData }) => {
+        const newArr = [...todoData, newItem];
+        return {
+          todoData: newArr,
+        };
+      });
+      e.target.value = "";
+    }
   };
 
   deleteTask = (id) => {
@@ -44,12 +45,20 @@ class App extends React.Component {
     });
   };
 
+  onToggleDone = (id) => {
+    console.log(id);
+  };
+
   render() {
     return (
       <div className={styles.app}>
         <h1 className={styles.todoTitle}>Todos</h1>
-        <NewTaskForm />
-        <TaskList todos={this.state.todoData} onDelete={this.deleteTask} />
+        <NewTaskForm onAddTaskHandler={this.onAddTaskHandler} />
+        <TaskList
+          onToggleDone={this.onToggleDone}
+          todos={this.state.todoData}
+          onDelete={this.deleteTask}
+        />
         <Footer />
       </div>
     );
