@@ -1,44 +1,62 @@
 .task {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 12px;
   list-style-type: none;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 20px;
+  margin-top: 5px;
 }
 .task:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
 }
 .task__right {
-  display: flex;
-  gap: 12px;
+  box-shadow: 4px 11px 36px -3px rgba(34, 60, 80, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .task__edit,
 .task__delete {
   cursor: pointer;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-  padding: 12px;
   background-color: inherit;
   border: none;
-  transition: all 0.1s ease-in-out;
+  padding: 5px;
 }
-.task__edit {
+.task__edit::before {
+  content: "";
+  display: inline-block;
   background-image: url(../../img/edit.svg);
+  width: 28px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.task__delete {
+.task__delete::before {
+  content: "";
+  display: inline-block;
   background-image: url(../../img/delete.svg);
+  width: 28px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .task__edit:hover,
 .task__delete:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  border-radius: 100%;
+}
+.task__edit:active,
+.task__delete:active {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .task__created {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
+  margin-right: auto;
+}
+.task__checkbox {
+  cursor: pointer;
 }

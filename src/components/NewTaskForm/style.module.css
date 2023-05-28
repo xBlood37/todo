@@ -3,8 +3,38 @@
   gap: 12px;
 }
 .newTaskForm__button {
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  padding: 12px;
+}
+.newTaskForm__button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.newTaskForm__button:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.newTaskForm__button::after {
+  content: " ";
+  display: inline-block;
+  background-image: url(../../img/add.svg);
+  background-size: cover;
+  background-position: center;
+  width: 28px;
+  height: 20px;
 }
 .newTaskForm__input {
+  width: 100%;
   padding: 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.1);
+  outline: none;
+}
+.newTaskForm__input:focus {
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+  outline: 1px solid rgba(0, 0, 0, 0.3);
 }

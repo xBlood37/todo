@@ -2,3 +2,12 @@
   margin: 0;
   padding: 10px;
 }
+.preLi {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.preSpan {
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}

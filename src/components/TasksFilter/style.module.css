@@ -11,4 +11,14 @@
 }
 .tasksFilter__button {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  padding: 10px;
+  border-radius: 20px;
+}
+.tasksFilter__button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.tasksFilter__button:active {
+  background-color: rgba(0, 0, 0, 0.3);
 }

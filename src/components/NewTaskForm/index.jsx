@@ -10,7 +10,7 @@ const NewTaskForm = () => {
         type="text"
         placeholder="Add..."
       ></input>
-      <button className={styles.newTaskForm__button}>Add</button>
+      <button className={styles.newTaskForm__button}></button>
     </div>
   );
 };
